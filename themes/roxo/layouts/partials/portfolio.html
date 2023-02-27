@@ -1,0 +1,77 @@
+<head>
+<link rel='stylesheet' href="./roxo/assets/css/themes/bootstrap.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+</head>
+
+<div class="container-wrapper" >
+  <div class="wrapper">
+    <a href="mailto:fernanda.defalco7@gmail.com" class="icon facebook" >
+      <!-- <div class="tooltip">e-mail</div> -->
+      <span><i class="fa fa-envelope"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/in/fernandadefalco/" class="icon twitter">
+      <!-- <div class="tooltip">linkedin</div> -->
+      <span><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="https://www.instagram.com/feerdefalco/" class="icon instagram">
+      <!-- <div class="tooltip">instagram</div> -->
+      <span><i class="fab fa-instagram"></i></span>
+    </a>
+    <a href="https://github.com/fernandadefalco" class="icon github">
+      <!-- <div class="tooltip">github</div> -->
+      <span><i class="fab fa-github"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/in/fernandadefalco/" class="icon twitter">
+      <div class="tooltip">curriculum</div>
+      <span><i class = "far fa-list-alt"></i></span>
+    </a>
+    <!-- <a href="#" class="icon youtube"> -->
+      <!-- <div class="tooltip">Youtube</div> -->
+      <!-- <span><i class="fab fa-youtube"></i></span>
+    </a> -->
+  </div>
+</div>
+
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <a href="mailto:fernanda.defalco7@gmail.com"><i class="fa fa-envelope" style="font-size:48px;color:black"></i></a>
+  <a href="https://github.com/fernandadefalco"><i class="fa fa-github" style="font-size:48px;color:black"></i></a>
+  <a href="https://www.instagram.com/feerdefalco/"><i class="fa fa-instagram" style="font-size:48px;color:black"></i></a>
+  <a href="https://www.linkedin.com/in/fernandadefalco/"><i class="fa fa-linkedin" style="font-size:48px;color:black"></i></a>
+ -->
+
+{{ with .Site.Params.portfolio }}
+  {{ if .enable }}
+  <section class="site-project" id="project">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2>{{ .title }}</h2>
+            <p>{{ .subtitle }}</p>
+          </div>
+        </div>
+        {{ range first 10 (where $.Site.RegularPages "Type" "portfolio") }}
+        <div class="col-lg-3 col-md-10 mx-auto">
+          <div class="site-project-item">
+            <div class="site-project-item-thumb">
+              <img src="{{ .Params.Image | absURL }}" alt="project-thumb">
+            </div>
+            <div class="site-project-item-content">
+              <span>{{ delimit .Params.category ", " }}</span>
+              <h3>{{ .Title }}</h3>
+              <a href="{{ .Permalink }}" class="read-more">view project</a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        <div class="col-12 text-center text-lg-left">
+          <a href="portfolio" class="site-project-cta">MORE WORKS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}

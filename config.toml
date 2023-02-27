@@ -1,0 +1,75 @@
+baseURL       = "https://fernandadefalco.github.io/"
+languageCode  = "en-us"
+title         = "Fernanda Defalco"
+theme         = "roxo"
+summarylength = 25
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Home"
+    url     = ""
+    weight  = 1
+  [[menu.nav]]
+    name    = "About"
+    url     = "about"
+    weight  = 2
+  [[menu.nav]]
+    name    = "Portfolio"
+    url     = "portfolio"
+    weight  = 3
+  [[menu.nav]]
+    name    = "Contact"
+    url     = "contact"
+    weight  = 5
+
+# Site Params
+[params]
+  dateFormat = "26 FEB 1994"
+  # Meta data
+  description = "Fernanda Defalco"
+  author = ""
+  # Google Analitycs
+  googleAnalitycsID = "Your ID"
+  canonifyURLs = true
+  # We're using formspree.io for form handling, paste your formspree url below
+  # fabform  = "https://fabform.io/f/USAg2Jl"
+
+  # Contact Form
+  [params.contactForm]
+    placeholder_first_name        = "Name"
+    placeholder_last_name         = "Last Name"
+    placeholder_email             = "Email"
+    placeholder_about_the_project = "Leave your message"
+    send_message                  = "Send Message"
+
+    [[params.contactForm.projectType]]
+      value = "gd"
+      title  = "Graphics Design"
+    [[params.contactForm.projectType]]
+      value = "wd"
+      title  = "Web Design"
+  
+  # Navbar Action Button
+  [params.navAction]
+    status  = true
+    name    = "Get in touch"
+    url     = "contact"
+  
+
+  # Banner Section
+  [params.banner]
+    enable                = true
+    background_image      = "images/backgrounds/banner-background.jpg"
+
+    heading               = ""
+    tagline               = ""
+
+
+  [params.portfolio]
+    enable    = true
+    title     = "PORTFOLIO"
+    subtitle  = "Projects developed using Python, R and SQL."
+
+  
